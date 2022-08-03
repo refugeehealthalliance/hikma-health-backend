@@ -4,7 +4,7 @@ from openpyxl import load_workbook
 from events.data_access import events_by_visit, camp_by_patient
 from patients.data_access import patient_from_id
 from users.data_access import user_name_by_id
-from events.event_export import write_vitals_event, write_medical_hx_event, write_examination_event, write_med1_event, write_med2_event, write_med3_event, write_med4_event, write_med5_event, write_physiotherapy_event, write_covid_19_event
+from events.event_export import write_vitals_event, write_medical_hx_event, write_examination_event, write_med1_event, write_med2_event, write_med3_event, write_med4_event, write_med5_event, write_physiotherapy_event, write_covid_19_event, write_medicines_event, write_dm_history_event, write_clinical_examination_event, write_foot_examination_event, write_lab_investigation_event, write_ophthalmology_examination_event, write_endocrinologist_cases_event, write_endocrinologist_cases_event, write_referrals_event
 from datetime import datetime, timedelta
 from tempfile import NamedTemporaryFile
 import json
@@ -74,16 +74,17 @@ class SinglePatientDataExporter:
                 elif event.event_type == 'Physiotherapy':
                     write_physiotherapy_event(row, event)
                 elif event.event_type == 'Medicine':
-                    if row.medication_1 is None:
-                        write_med1_event(row, event)
-                    elif row.medication_2 is None:
-                        write_med2_event(row, event)
-                    elif row.medication_3 is None:
-                        write_med3_event(row, event)
-                    elif row.medication_4 is None:
-                        write_med4_event(row, event)
-                    elif row.medication_5 is None:
-                        write_med5_event(row, event)        
+                    write_medicines_event(row, event)
+                    # if row.medication_1 is None:
+                    #     write_med1_event(row, event)
+                    # elif row.medication_2 is None:
+                    #     write_med2_event(row, event)
+                    # elif row.medication_3 is None:
+                    #     write_med3_event(row, event)
+                    # elif row.medication_4 is None:
+                    #     write_med4_event(row, event)
+                    # elif row.medication_5 is None:
+                    #     write_med5_event(row, event)        
                 elif event.event_type == 'Notes':
                     self.write_text_event(row, 'notes', event.event_metadata)
                 elif event.event_type == 'Dental Treatment':
@@ -115,6 +116,20 @@ class SinglePatientDataExporter:
                 elif event.event_type == 'Prescriptions':
                     self.write_text_event(
                         row, 'prescriptions_d', event.event_metadata)
+                elif event.event_type == 'DM History':
+                    write_dm_history_event(row, event)
+                elif event.event_type == 'Clinical Examination':
+                    write_clinical_examination_event(row, event)
+                elif event.event_type == 'Endocrinologist Cases':
+                    write_endocrinologist_cases_event(row, event)
+                elif event.event_type == 'Referrals':
+                    write_referrals_event(row, event)
+                elif event.event_type == 'Foot Care Examination':
+                    write_foot_examination_event(row, event)
+                elif event.event_type == 'Lab Data and Investigations':
+                    write_lab_investigation_event(row, event)
+                elif event.event_type == 'Ophthalmology Examination':
+                    write_ophthalmology_examination_event(row, event)
             yield row
 
     def write_text_event(self, row, key, text):

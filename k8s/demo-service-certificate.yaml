@@ -4,4 +4,4 @@ metadata:
   name: demo-api-certificate
 spec:
   domains:
-    - "demo-api.hikmahealth.org"
+    - "mmc-dppo-api.setout.academy"

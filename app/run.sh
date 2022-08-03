@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./run_migrations.sh
+PYTHONPATH=. alembic upgrade head
 
 export PYTHONUNBUFFERED=TRUE
 

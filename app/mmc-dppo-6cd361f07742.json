@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mmc-dppo",
+  "private_key_id": "6cd361f0774280dc1a8e83d41f92c98d099eb51c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDunLYHDcA/MuAU\nBAej7lMj9gWX3mUBzIfY6PyWBkVebuzQUNm6P6ubCddlRwtkvH1MmH9tZrpCKU+L\ntyvxk0jyJgy3B52vWJRR+SrTMnjTO2wcX/OrmGA5l4KETod5J2NCZhbxdRhhr5iw\nO5Regyxg5uTQPZwpVuIrftnQcSw7zIb1gOQR3vgqZ0y2Wl/qCCt6ey8Fqpk1wSsT\nxBVFYF5vuwa82IGjKI6HpJDLx/UckuHJtFn6X6JssgTBxQuND3/lUMvyibSs2ZSs\nrl+cnDS6TlL/JzdMGZeTdZqVtdcMDtpvlzuhpLAf4tNgHaKc5yfdFq24bBS/rZla\n9J++QRghAgMBAAECggEALcSES60RC248OcqeFoz/iH3Hi949/I7ZHbtuu23/f0IC\njWB8qrNMvKOyG3x5jHx1AiycAIV8Q3V+Cvv6407PZpbyyGafEcOJS4Hh+3mKYGXc\n8kJbUDYdet57S9puNMhfyxwe2XiO0SnnvSHobwp1CC8xg1nV6r3+Cr69k7Qpelx9\nT8FMtA8DDrnBcRwAXqmJ9sXe1NjlrOJsAkMiV3ZFf1eszDPtbqSKzWa0d3PTLBRi\n0jxZ5faU6D/UJyypK/BUUtr1V8WvmNMySwLVdFKCqgdcQKcIxOC5t25ySee95pjV\ne1+J4h/cXdzsi01vE645AF5mzPCMafbZiiV17rmyKwKBgQD7+fNUScYgPf6+JoHG\nrLJQrH0QwAowVDC9UfD8UgKfttZRbEper44QuwZKLodJjK6WS0465jkIuRIOSQHZ\nnBCc6/lRqSS1pb3BefQuZB3ZpsNCIZ12Tcms2z502O1oeyvtYEsrKgZpvv7q+U3c\nZGK53SRAwOgiyALoy7UKAvnnJwKBgQDybCETz80Fi/aCOS7yfIpafNx+R2ycSYQc\nKRKs4Y34ceWhzBNNKsXubgra82QnZO4p8I/4ErSMTgnqFvPXIZY8KMwDXrS/rojj\nWongbdIGtoPHlMcdmw12p8w8cpT5H5xZWOA+/PQ8gctepa3joC4RTlWZtlmb6g62\nhtE0R9NTdwKBgQCrfkZ6C2vo7ci/Kf4RdeA2v+6uw8Urd2FkuKxHTpmykgHzkLxd\nDSanhGKXgmtZR4JbkA1CUQZoRW1gg5favzkfVAtv5KqzZoZrc9EY8dLPG4yxKae9\nqNul5eHwLOQHxCz1diAy1Htg5TkiO2MeqMP4s+XEnIZhhbdVMa+ZjMUA6QKBgC9c\nuMmqG6AtzCd9DJMLiexL4Lg7NBkEs+7ch22HU7lqZzbJLCwzYyBGF5DXZIXdzjob\nacVJwkR3KrC1c0ZgpX1zawhthFq+urfQhId4bUQqfGyNwKkkFelMtzZIHJrfdihu\nmME1onH/2b/QFr0WGmn/J/I0EiXIAL/gbxcLwVnZAoGBALBYXVbl1KciBu1xDpQz\njOdJZaj7jkcTmSsIadghuMkDcYg8uvBHssLNQ9XiUbb85CZOJwHo7iCX+ujEMVC7\nagchhrOxRpzlYdcayGT/fHfw6e0Wx9fM0+3i5DrgM2Iokh+jxC8vlhg2LvYHP/nI\nPn43Uirz2og7LLD1UcoOVayX\n-----END PRIVATE KEY-----\n",
+  "client_email": "hikma-app-service-account@mmc-dppo.iam.gserviceaccount.com",
+  "client_id": "102397758904111943808",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hikma-app-service-account%40mmc-dppo.iam.gserviceaccount.com"
+}

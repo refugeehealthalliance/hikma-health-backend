@@ -43,45 +43,48 @@ COLUMNS = [
     # complaint
     'complaint',
     # vitals
-    'heart_rate',
-    'blood_pressure',
-    'sats',
-    'temp',
-    'respiratory_rate',
+    'height',
     'weight',
-    'blood_glucose',
+    'bmi',
+    'waist_circumference',
+    'blood_pressure',
+    'pulse',
     # examination
-    'examination',
-    'general_observations',
-    'diagnosis',
-    'treatment',
-    'covid_19',
-    'referral',
-    # medicines_1
-    'medication_1',
-    'type_1',
-    'dosage_1',
-    'days_1',
-    # medicines_2
-    'medication_2',
-    'type_2',
-    'dosage_2',
-    'days_2',
-    # medicines_3
-    'medication_3',
-    'type_3',
-    'dosage_3',
-    'days_3',
-    # medicines_4
-    'medication_4',
-    'type_4',
-    'dosage_4',
-    'days_4',
-    # medicines_5
-    'medication_5',
-    'type_5',
-    'dosage_5',
-    'days_5',
+    'examination_complaint',
+    'active_conditions',
+    'inactive_conditions',
+    'illness_history',
+    # medicines_1 
+    # 'medication_1',
+    # 'type_1',
+    # 'dosage_1',
+    # 'days_1',
+    # # medicines_2
+    # 'medication_2',
+    # 'type_2',
+    # 'dosage_2',
+    # 'days_2',
+    # # medicines_3
+    # 'medication_3',
+    # 'type_3',
+    # 'dosage_3',
+    # 'days_3',
+    # # medicines_4
+    # 'medication_4',
+    # 'type_4',
+    # 'dosage_4',
+    # 'days_4',
+    # # medicines_5
+    # 'medication_5',
+    # 'type_5',
+    # 'dosage_5',
+    # 'days_5',
+    # medicines
+    'on_stain',
+    'stain_name_dose',
+    'diabetes',
+    'htn',
+    'non_diabetes',
     # physiotherapy
     'previous_treatment',
     'complaint_p',
@@ -101,6 +104,90 @@ COLUMNS = [
     'medicine_dispensed_d',
     'prescriptions_d',
     'allergies_d',
+    # DM History
+    'diagnosis_age',
+    'dm_duration',
+    'diabetes_type',
+    'management',
+    'family_history',
+    'smoker',
+    'alcohol',
+    'cardiac_problem',
+    'hf_sign',
+    'hypertension',
+    'renal_problem',
+    'eye_problem',
+    'hypoglycemia_requiring',
+    'dka',
+    'myocardial',
+    'cerebral_stroke',
+    'limb_amputation',
+    'erectile_dysfunction',
+    'retinal_examination',
+    # Clinical Examination
+    'respiratory_system',
+    'respiratory_system_note',
+    'cvs',
+    'cvs_note',
+    'abdomen',
+    'abdomen_note',
+    'musculoskeletal',
+    'musculoskeletal_note',
+    'cns',
+    'cns_note'
+    # foot examination
+    'rt_vibration',
+    'rt_monofilament',
+    'rt_distal_pulse',
+    'rt_dorsalis_pulse',
+    'rt_posterior_pulse',
+    'left_vibration',
+    'left_monofilament',
+    'left_distal_pulse',
+    'left_dorsalis_pulse',
+    'left_posterior_pulse',
+    # lab investigation
+    'hb_a1c',
+    'fating_glucose',
+    'random_glucose',
+    'post_meal_glucose',
+    'creatinine',
+    'egfr',
+    'total_cholesterol',
+    'ldl_cholesterol',
+    'hdl',
+    'tg',
+    'sodium',
+    'potassium',
+    'haemoglobin',
+    'urinary_acr',
+    'dipstick_protein',
+    'urine_protein',
+    'urine_sugar',
+    'urine_microalbuminuria',
+    'urine_ketones',
+    'ecg',
+    'other_investigations'
+    # Ophthalmology Examination
+    'rt_dilated_fundoscopy',
+    'rt_ophthalmologist',
+    'rt_retinal_camera',
+    'rt_findings',
+    'left_dilated_fundoscopy',
+    'left_ophthalmologist',
+    'left_retinal_camera',
+    'left_findings',
+    # Endocrinologist Cases
+    'indications',
+    'feedback',
+    'diabetes_education',
+    # Referrals
+    'diabetic_educator',
+    'dietitian',
+    'ophthalmologist',
+    'foot_care_clinic',
+    'social_services',
+    'psychologist',
 ]
 
 @dataclass
@@ -123,13 +210,16 @@ class PatientDataRow:
     current_medications: str = None
     vaccinations: str = None
     complaint: str = None
-    heart_rate: str = None
-    blood_pressure: str = None
-    sats: str = None
-    temp: str = None
-    respiratory_rate: str = None
+    height: str = None
     weight: str = None
-    blood_glucose: str = None
+    bmi: str = None
+    waist_circumference: str = None
+    blood_pressure: str = None
+    pulse: str = None
+    examination_complaint: str = None
+    active_conditions: str = None
+    inactive_conditions: str = None
+    illness_history: str = None
     examination: str = None
     general_observations: str = None
     diagnosis: str = None
@@ -173,6 +263,98 @@ class PatientDataRow:
     medicine_dispensed_d: str = None
     prescriptions_d: str = None
     allergies_d: str = None
+    # DM History
+    diagnosis_age: str = None
+    dm_duration: str = None
+    diabetes_type: str = None
+    management: str = None
+    family_history: str = None
+    smoker: str = None
+    alcohol: str = None
+    cardiac_problem: str = None
+    hf_sign: str = None
+    hypertension: str = None
+    renal_problem: str = None
+    eye_problem: str = None
+    hypoglycemia_requiring: str = None
+    dka: str = None
+    myocardial: str = None
+    cerebral_stroke: str = None
+    limb_amputation: str = None
+    erectile_dysfunction: str = None
+    retinal_examination: str = None
+    # Clinical Examination
+    respiratory_system: str = None
+    respiratory_system_note: str = None
+    cvs: str = None
+    cvs_note: str = None
+    abdomen: str = None
+    abdomen_note: str = None
+    musculoskeletal: str = None
+    musculoskeletal_note: str = None
+    cns: str = None
+    cns_note: str = None
+    # medicines
+    on_stain: str = None
+    stain_name_dose: str = None
+    diabetes: str = None
+    htn: str = None
+    non_diabetes: str = None
+    # foot examination
+    rt_vibration: str = None
+    rt_monofilament: str = None
+    rt_distal_pulse: str = None
+    rt_dorsalis_pulse: str = None
+    rt_posterior_pulse: str = None
+    left_vibration: str = None
+    left_monofilament: str = None
+    left_distal_pulse: str = None
+    left_dorsalis_pulse: str = None
+    left_posterior_pulse: str = None
+    # lab investigation
+    hb_a1c: str = None
+    fating_glucose: str = None
+    random_glucose: str = None
+    post_meal_glucose: str = None
+    creatinine: str = None
+    egfr: str = None
+    total_cholesterol: str = None
+    ldl_cholesterol: str = None
+    hdl: str = None
+    tg: str = None
+    sodium: str = None
+    potassium: str = None
+    haemoglobin: str = None
+    urinary_acr: str = None
+    dipstick_protein: str = None
+    urine_protein: str = None
+    urine_sugar: str = None
+    urine_microalbuminuria: str = None
+    urine_ketones: str = None
+    ecg: str = None
+    other_investigations: str = None
+    # Ophthalmology Examination
+    rt_dilated_fundoscopy: str = None
+    rt_ophthalmologist: str = None
+    rt_retinal_camera: str = None
+    rt_findings: str = None
+    left_dilated_fundoscopy: str = None
+    left_ophthalmologist: str = None
+    left_retinal_camera: str = None
+    left_findings: str = None
+    # Endocrinologist Cases
+    indications: str = None
+    feedback: str = None
+    diabetes_education: str = None
+    # Referrals
+    diabetic_educator: str = None
+    dietitian: str = None
+    ophthalmologist: str = None
+    foot_care_clinic: str = None
+    social_services: str = None
+    psychologist: str = None
+
+
 
 
 # COLUMN_TYPES = [str, None, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, float, str,

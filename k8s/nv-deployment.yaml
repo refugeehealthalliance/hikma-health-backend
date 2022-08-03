@@ -23,7 +23,7 @@ spec:
         app: hikma-health-backend-nv
     spec:
       containers:
-      - image: gcr.io/hikma-health/hikma-health-backend-nv:24cfdeace6301704a6b27a3623344d84dd342c30
+      - image: gcr.io/mmc-dppo/hikma-health-backend:e22e47f690439747f366a9e13dfdf4e1005678d8
         imagePullPolicy: IfNotPresent
         name: hikma-health-backend
         resources: {}

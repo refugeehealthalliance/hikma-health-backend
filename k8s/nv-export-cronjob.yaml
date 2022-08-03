@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: run-full-export
@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: run-full-export
-            image: gcr.io/hikma-health/hikma-health-backend-nv:8c70ca30b8bde5ad47fb9bdcaea9f1ccd8ffb8c9
+            image: gcr.io/mmc-dppo/hikma-health-backend:5daee25376c6c956e41f1153dfb2eb4486b29a8a
             command:
             - /bin/bash
             - run-export.sh
