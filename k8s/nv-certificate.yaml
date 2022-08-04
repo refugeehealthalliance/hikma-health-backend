@@ -1,7 +1,7 @@
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: nv-api-certificate
+  name: api-certificate
 spec:
   domains:
-    - "dppo-hikma.setout.academy"
+    - "refugee.setout.academy"
