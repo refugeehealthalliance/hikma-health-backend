@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: hikma-dev-ip
-    networking.gke.io/managed-certificates: nv-api-certificate
+    networking.gke.io/managed-certificates: api-certificate
   name: dppo-service-ingress
 spec:
   rules:
@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nv-nodeport-service
+            name: nodeport-service
             port:
               number: 80
