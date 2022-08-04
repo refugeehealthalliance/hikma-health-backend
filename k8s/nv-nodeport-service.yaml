@@ -12,5 +12,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: hikma-health-backend-nv
+    app: hikma-health-backend
   type: NodePort
