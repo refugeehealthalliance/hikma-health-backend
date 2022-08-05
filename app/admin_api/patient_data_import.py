@@ -172,7 +172,6 @@ COLUMNS = [
     "feeling_down",
     "cant_sleep",
     "dont_feel_safe_living",
-    "first_section_score",
     "how_you_feel",
     "child_body_feeling",
     "child_away_from_people",

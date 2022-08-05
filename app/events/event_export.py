@@ -117,7 +117,6 @@ def write_mental_health_event(row: PatientDataRow, event):
     row.feeling_down = data.get('feelingDown')
     row.cant_sleep = data.get('cantSleep')
     row.dont_feel_safe_living = data.get('dontFeelSafeLiving')
-    row.first_section_score = data.get('firstSectionScore')
     row.how_you_feel = data.get('howYouFeel')
     row.child_body_feeling = data.get('childBodyFeeling')
     row.child_away_from_people = data.get('childAwayFromPeople')
