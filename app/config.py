@@ -23,7 +23,7 @@ if ENV == 'prod':
     FLASK_DEBUG = False
     PG_USER = 'hikma_prod'
     PG_PASSWORD = "1IuhVFZKwe0EQr0Q"
-    PG_HOST = '34.135.174.180'
+    PG_HOST = '10.22.64.4'
     PG_DB = 'hikma_prod'
     PHOTOS_STORAGE_BUCKET = os.environ['PHOTOS_STORAGE_BUCKET']
     EXPORTS_STORAGE_BUCKET = os.environ['EXPORTS_STORAGE_BUCKET']
