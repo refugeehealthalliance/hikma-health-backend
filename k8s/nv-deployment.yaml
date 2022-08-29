@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: hikma-health-backend-n
-  name: hikma-health-backend-n
+    app: hikma-health-backend
+  name: hikma-health-backend
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -11,7 +11,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: hikma-health-backend-n
+      app: hikma-health-backend
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -20,10 +20,10 @@ spec:
   template:
     metadata:
       labels:
-        app: hikma-health-backend-n
+        app: hikma-health-backend
     spec:
       containers:
-      - image: gcr.io/refugee-health-alliance-hikma/hikma-health-backend:81e07bf51c181faa538badcf6ca8600723698f04
+      - image: gcr.io/refugee-health-alliance-hikma/hikma-health-backend:81e07bf51c181faa538badcf6ca8600723698f04	
         imagePullPolicy: IfNotPresent
         name: hikma-health-backend
         resources: {}
