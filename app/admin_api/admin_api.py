@@ -9,7 +9,6 @@ from language_strings.language_string import LanguageString
 from admin_api.patient_data_export import most_recent_export
 from admin_api.single_patient_data_export import single_patient_export
 
-
 import uuid
 import bcrypt
 import psycopg2.errors
