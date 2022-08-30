@@ -12,7 +12,7 @@ if ENV in ('dev_local', 'dev_docker', 'stg'):
     PG_USER = 'postgres'
     # PG_PASSWORD = 'password'
     PG_PASSWORD = 'postgres'
-    PG_DB = 'rha-db'
+    PG_DB = 'hikma_dev'
     FLASK_DEBUG = True
     PHOTOS_STORAGE_BUCKET = 'dev-api-photos'
     EXPORTS_STORAGE_BUCKET = 'dev-api-exports'
