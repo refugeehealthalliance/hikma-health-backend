@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: hikma-dev-ip
     networking.gke.io/managed-certificates: api-certificate
-  name: dppo-service-ingress
+  name: service-ingress
 spec:
   rules:
   - http:
