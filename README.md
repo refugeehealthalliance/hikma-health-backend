@@ -29,6 +29,10 @@ This activates google account for hikma, also sets local kubernetes to use the h
 ```
 alias activate_hikma='gcloud config set account [GCP account email] && gcloud config set project [GCP_project] && gcloud config set compute/zone [zone] && gcloud container clusters get-credentials [cluster_name]'
 ```
+
+alias activate_hikma='bo
+
+
 Close and reopen terminal for that to take effect
 
 Run activate alias script.
@@ -63,7 +67,7 @@ Add [key_filename].json to .gitignore
 
 Encode the key so you have something to commit and use to build:
 ```
-gcloud kms encrypt --location=global --keyring=[keyring_name] --key=[key_name] --plaintext-file=[key_filename].json --ciphertext-file=[key_filename].json.enc
+gcloud kms encrypt --location=global --keyring=rha-key --key=rha-key --plaintext-file=refugee-health-alliance-hikma-f5f000bab1bb.json --ciphertext-file=refugee-health-alliance-hikma-f5f000bab1bb.json.enc
 ```
 
 
