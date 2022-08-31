@@ -23,7 +23,7 @@ spec:
         app: hikma-health-backend
     spec:
       containers:
-      - image: gcr.io/refugee-health-alliance-hikma/hikma-health-backend:a900614191d5ac5290610671ded58530051519e4
+      - image: gcr.io/refugee-health-alliance-hikma/hikma-health-backend:ad3d5b1820743e3e3e061492b3645edbd8fe6073
         imagePullPolicy: IfNotPresent
         name: hikma-health-backend
         resources: {}
