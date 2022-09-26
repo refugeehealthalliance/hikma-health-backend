@@ -22,7 +22,7 @@ from datetime import datetime
 admin_api = Blueprint('admin_api', __name__, url_prefix='/admin_api')
 
 @admin_api.route('/add_clinic', methods=['GET'])
-def add_clinic():
+def add_demo_clinic():
     clinic = Clinic(id=str(uuid.uuid4()), edited_at=datetime.now(), name=LanguageString(
     id=str(uuid.uuid4()), content_by_language={
         'en': 'RHA'
