@@ -14,8 +14,22 @@ import bcrypt
 import psycopg2.errors
 
 
+from clinics.clinic import Clinic
+from clinics.data_access import add_clinic
+import uuid
+from datetime import datetime
+
 admin_api = Blueprint('admin_api', __name__, url_prefix='/admin_api')
 
+@admin_api.route('/add_clinic', methods=['GET'])
+def add_clinic():
+    clinic = Clinic(id=str(uuid.uuid4()), edited_at=datetime.now(), name=LanguageString(
+    id=str(uuid.uuid4()), content_by_language={
+        'en': 'RHA'
+    }))
+    add_clinic(clinic)
+
+    return jsonify({'clinic': "RHA"})
 
 @admin_api.route('/login', methods=['POST'])
 def login():
