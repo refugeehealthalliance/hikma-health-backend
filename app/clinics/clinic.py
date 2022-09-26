@@ -64,3 +64,10 @@ class Clinic(ClientObject):
     @classmethod
     def table_name(cls):
         return "clinics"
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name.to_dict(),
+            'edited_at': self.edited_at,
+        }
