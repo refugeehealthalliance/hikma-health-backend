@@ -25,3 +25,9 @@ def get_most_common_clinic():
                 cur.execute(secondary)
                 result = cur.fetchone()
             return result[0]
+
+def all_clinic_data():
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute('SELECT id, name, edited_at FROM clinics ORDER BY name', [])
+            yield from cur

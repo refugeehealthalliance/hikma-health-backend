@@ -15,7 +15,7 @@ import psycopg2.errors
 
 
 from clinics.clinic import Clinic
-from clinics.data_access import add_clinic
+from clinics.data_access import add_clinic, all_clinic_data
 import uuid
 from datetime import datetime
 
@@ -25,11 +25,17 @@ admin_api = Blueprint('admin_api', __name__, url_prefix='/admin_api')
 def add_demo_clinic():
     clinic = Clinic(id=str(uuid.uuid4()), edited_at=datetime.now(), name=LanguageString(
     id=str(uuid.uuid4()), content_by_language={
-        'en': 'RHA'
+        'en': 'EMA'
     }))
     add_clinic(clinic)
 
-    return jsonify({'clinic': "RHA"})
+    return jsonify({'clinic': "EMA"})
+
+
+@admin_api.route('/list_clinics', methods=['GET'])
+def list_clinics():
+    all_clinics = [Clinic.from_db_row(r).to_dict() for r in all_clinic_data()]
+    return jsonify({'clinics': all_clinics})
 
 @admin_api.route('/login', methods=['POST'])
 def login():
