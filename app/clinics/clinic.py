@@ -3,6 +3,7 @@ from language_strings.language_string import LanguageString
 from client_object import ClientObject
 from datetime import datetime
 from util import identity, parse_client_timestamp
+import clinics.data_access as db
 
 
 @dataclass
@@ -20,6 +21,15 @@ class Clinic(ClientObject):
 
     def client_update_values(self):
         return [self.name.id.replace('-', ''), self.format_ts(self.edited_at), self.id]
+    
+    @classmethod
+    def from_id(cls, clinic_id):
+        return cls.from_db_row(db.clinic_data_by_id(clinic_id))
+
+    @classmethod
+    def from_db_row(cls, db_row):
+        id, name, edited_at = db_row
+        return cls(id, LanguageString.from_id(name), edited_at)
 
     @classmethod
     def client_update_sql(cls):
