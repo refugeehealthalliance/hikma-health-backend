@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade():
-    op.execute('ALTER TABLE patients ADD COLUMN sex varchar(1)')
+    op.execute('ALTER TABLE patients ADD COLUMN sex text')
     op.execute('ALTER TABLE patients ADD COLUMN phone text')
 
 

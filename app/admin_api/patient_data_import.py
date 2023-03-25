@@ -27,19 +27,57 @@ COLUMNS = [
     'visit_type',
     'first_name',
     'surname',
+    'number',
     'date_of_birth',
     'age',
     'gender',
     'hometown',
     'home_country',
     'phone',
+    'number',
     'doctor',
-    # medical hx
+    # medical history
     'allergies',
-    'surgery_hx',
-    'chronic_conditions',
-    'current_medications',
+    'tobacco',
+    'alcohol',
+    'drugs',
+    'surgeryHx',
+    'chronicConditions',
+    'currentMedications',
     'vaccinations',
+    'cancer',
+    'cancerDetails',
+    'epilepsy',
+    'epilepsyDetails',
+    'heartDisease',
+    'heartDiseaseDetails',
+    'hypertension',
+    'hypertensionDetails',
+    'thyroidConditions',
+    'thyroidConditionsDetails',
+    'tuberculosis',
+    'tuberculosisDetails',
+    'diabetes',
+    'diabetesDetails',
+    'multipleBirths',
+    'multipleBirthsDetails',
+    'breechBirths',
+    'breechBirthsDetails',
+    'domesticViolence',
+    'domesticViolenceDetails',
+    'alcoholismDrugAddiction',
+    'alcoholismDrugAddictionDetails',
+    'codependency',
+    'codependencyDetails',
+    'nutritionalDisorder',
+    'nutritionalDisorderDetails',
+    'abuse',
+    'abuseDetails',
+    'sexualAbuse',
+    'sexualAbuseDetails',
+    'mentalDisorders',
+    'mentalDisordersDetails',
+    
     # complaint
     'complaint',
     # vitals
@@ -50,6 +88,7 @@ COLUMNS = [
     'respiratory_rate',
     'weight',
     'blood_glucose',
+    
     # examination
     "trauma_physical",
     "trauma_sexual",
@@ -59,50 +98,77 @@ COLUMNS = [
     "trauma_threats",
     "trauma_t_j",
     "trauma_others",
-    # medicines_1
-    'medication_1',
-    'type_1',
-    'dosage_1',
-    'days_1',
-    # medicines_2
-    'medication_2',
-    'type_2',
-    'dosage_2',
-    'days_2',
-    # medicines_3
-    'medication_3',
-    'type_3',
-    'dosage_3',
-    'days_3',
-    # medicines_4
-    'medication_4',
-    'type_4',
-    'dosage_4',
-    'days_4',
-    # medicines_5
-    'medication_5',
-    'type_5',
-    'dosage_5',
-    'days_5',
+    # Medicines
+    "medicationM1",
+    "typeM1",
+    "routeM1",
+    "dosageM1",
+    "daysM1",
+    "medicationM2",
+    "typeM2",
+    "routeM2",
+    "dosageM2",
+    "daysM2",
+    "medicationM3",
+    "typeM3",
+    "routeM3",
+    "dosageM3",
+    "daysM3",
+    "medicationM4",
+    "typeM4",
+    "routeM4",
+    "dosageM4",
+    "daysM4",
+    "medicationM5",
+    "typeM5",
+    "routeM5",
+    "dosageM5",
+    "daysM5",
+    "medicationM6",
+    "typeM6",
+    "routeM6",
+    "dosageM6",
+    "daysM6",
+    "medicationM7",
+    "typeM7",
+    "routeM7",
+    "dosageM7",
+    "daysM7",
+    "medicationM8",
+    "typeM8",
+    "routeM8",
+    "dosageM8",
+    "daysM8",
+    "medicationM9",
+    "typeM9",
+    "routeM9",
+    "dosageM9",
+    "daysM9",
+    "medicationM10",
+    "typeM10",
+    "routeM10",
+    "dosageM10",
+    "daysM10",
     # physiotherapy
-    'previous_treatment',
-    'complaint_p',
-    'findings',
-    'treatment_plan',
-    'treatment_session',
-    'recommendations',
-    'referral',
-    'dental_treatment',
-    'notes',
-    'covid_19_result',
-    # deprecated
-    'examination_d',
-    'medical_hx_d',
-    'treatment_d',
-    'diagnosis_d',
-    'medicine_dispensed_d',
-    'prescriptions_d',
-    'allergies_d',
+    "previousTreatment",
+    "previousTreatmentText",
+    "complaint",
+    "hpi",
+    "appearance",
+    "eent",
+    "heartPulses",
+    "lungs",
+    "abdomen",
+    "genitales",
+    "extremities",
+    "skin",
+    "neuro",
+    "isPregnant",
+    "lastPeriodFirstDay",
+    "assessmentPlan",
+    "notes",
+    "referral",
+    "referralText",
     # Common Problems
     "difficulty_eating",
     "suicidal_ideation",
@@ -186,6 +252,45 @@ COLUMNS = [
     "hard_pay_attention",
     "feel_alone",
     "past_week_stress"
+    # Nursing Notes
+    "bodyHabitus",
+    "procedures",
+    "observations",
+    # Lab
+    "dateBt1",
+    "testBt1",
+    "resultBt1",
+    "notesBt1",
+    "dateBt2",
+    "testBt2",
+    "resultBt2",
+    "notesBt2",
+    "dateBt3",
+    "testBt3",
+    "resultBt3",
+    "notesBt3",
+    "dateBt4",
+    "testBt4",
+    "resultBt4",
+    "notesBt4",
+    "dateBt5",
+    "testBt5",
+    "resultBt5",
+    "notesBt5",
+    "dateI1",
+    "testI1",
+    "resultI1",
+    "notesI1",
+    "dateI2",
+    "testI2",
+    "resultI2",
+    "notesI2",
+    "dateI3",
+    "testI3",
+    "resultI3",
+    "notesI3",
+    # Dental Treatment
+    "dental_treatment"
 ]
 
 @dataclass
@@ -201,13 +306,52 @@ class PatientDataRow:
     hometown: str = None
     home_country: str = None
     phone: str = None
+    number: str = None
     doctor: str = None
+    # Medical History
     allergies: str = None
-    surgery_hx: str = None
-    chronic_conditions: str = None
-    current_medications: str = None
+    tobacco: str = None
+    alcohol: str = None
+    drugs: str = None
+    surgeryHx: str = None
+    chronicConditions: str = None
+    currentMedications: str = None
     vaccinations: str = None
+    cancer: str = None
+    cancerDetails: str = None
+    epilepsy: str = None
+    epilepsyDetails: str = None
+    heartDisease: str = None
+    heartDiseaseDetails: str = None
+    hypertension: str = None
+    hypertensionDetails: str = None
+    thyroidConditions: str = None
+    thyroidConditionsDetails: str = None
+    tuberculosis: str = None
+    tuberculosisDetails: str = None
+    diabetes: str = None
+    diabetesDetails: str = None
+    multipleBirths: str = None
+    multipleBirthsDetails: str = None
+    breechBirths: str = None
+    breechBirthsDetails: str = None
+    domesticViolence: str = None
+    domesticViolenceDetails: str = None
+    alcoholismDrugAddiction: str = None
+    alcoholismDrugAddictionDetails: str = None
+    codependency: str = None
+    codependencyDetails: str = None
+    nutritionalDisorder: str = None
+    nutritionalDisorderDetails: str = None
+    abuse: str = None
+    abuseDetails: str = None
+    sexualAbuse: str = None
+    sexualAbuseDetails: str = None
+    mentalDisorders: str = None
+    mentalDisordersDetails: str = None
+    # Complaint
     complaint: str = None
+    # Vitals
     heart_rate: str = None
     blood_pressure: str = None
     sats: str = None
@@ -215,49 +359,214 @@ class PatientDataRow:
     respiratory_rate: str = None
     weight: str = None
     blood_glucose: str = None
-    examination: str = None
-    general_observations: str = None
-    diagnosis: str = None
-    treatment: str = None
-    covid_19: str = None
-    referral: str = None
-    medication_1: str = None
-    type_1: str = None
-    dosage_1: str = None
-    days_1: str = None
-    medication_2: str = None
-    type_2: str = None
-    dosage_2: str = None
-    days_2: str = None
-    medication_3: str = None
-    type_3: str = None
-    dosage_3: str = None
-    days_3: str = None
-    medication_4: str = None
-    type_4: str = None
-    dosage_4: str = None
-    days_4: str = None
-    medication_5: str = None
-    type_5: str = None
-    dosage_5: str = None
-    days_5: str = None
-    previous_treatment: str = None
-    complaint_p: str = None
-    findings: str = None
-    treatment_plan: str = None
-    treatment_session: str = None
-    recommendations: str = None
-    referral: str = None
-    dental_treatment: str = None
+    # Examination
+    trauma_physical: str = None
+    trauma_sexual: str = None
+    trauma_abuse: str = None
+    trauma_killing: str = None
+    trauma_p_seperation: str = None
+    trauma_threats: str = None
+    trauma_t_j: str = None
+    trauma_others: str = None
+    # Medicines
+    medicationM1: str = None
+    typeM1: str = None
+    routeM1: str = None
+    dosageM1: str = None
+    daysM1: str = None
+    medicationM2: str = None
+    typeM2: str = None
+    routeM2: str = None
+    dosageM2: str = None
+    daysM2: str = None
+    medicationM3: str = None
+    typeM3: str = None
+    routeM3: str = None
+    dosageM3: str = None
+    daysM3: str = None
+    medicationM4: str = None
+    typeM4: str = None
+    routeM4: str = None
+    dosageM4: str = None
+    daysM4: str = None
+    medicationM5: str = None
+    typeM5: str = None
+    routeM5: str = None
+    dosageM5: str = None
+    daysM5: str = None
+    medicationM6: str = None
+    typeM6: str = None
+    routeM6: str = None
+    dosageM6: str = None
+    daysM6: str = None
+    medicationM7: str = None
+    typeM7: str = None
+    routeM7: str = None
+    dosageM7: str = None
+    daysM7: str = None
+    medicationM8: str = None
+    typeM8: str = None
+    routeM8: str = None
+    dosageM8: str = None
+    daysM8: str = None
+    medicationM9: str = None
+    typeM9: str = None
+    routeM9: str = None
+    dosageM9: str = None
+    daysM9: str = None
+    medicationM10: str = None
+    typeM10: str = None
+    routeM10: str = None
+    dosageM10: str = None
+    daysM10: str = None
+    # Physical Exam
+    previousTreatment: str = None
+    previousTreatmentText: str = None
+    complaint: str = None
+    hpi: str = None
+    appearance: str = None
+    eent: str = None
+    heartPulses: str = None
+    lungs: str = None
+    abdomen: str = None
+    genitales: str = None
+    extremities: str = None
+    skin: str = None
+    neuro: str = None
+    isPregnant: str = None
+    lastPeriodFirstDay: str = None
+    assessmentPlan: str = None
     notes: str = None
-    covid_19_result: str = None
-    examination_d: str = None
-    medical_hx_d: str = None
-    treatment_d: str = None
-    diagnosis_d: str = None
-    medicine_dispensed_d: str = None
-    prescriptions_d: str = None
-    allergies_d: str = None
+    referral: str = None
+    referralText: str = None
+    
+    # Common Problems
+    difficulty_eating: str = None
+    suicidal_ideation: str = None
+    difficulty_sleeping: str = None
+    hours_slept: str = None
+    sleeping_night: str = None
+    sleeping_falling: str = None
+    sleeping_walking: str = None
+    restless: str = None
+    difficulty_stopping_worrying: str = None
+    body_aches: str = None
+    body_aches_where: str = None
+    low_energy: str = None
+    no_interest: str = None
+    guilt: str = None
+    hopeless: str = None
+    flashbacks: str = None
+    hypervigilance: str = None
+    sad_irritable: str = None
+    hallucinations: str = None
+    potential_diagnosis: str = None
+    other_symptom: str = None
+    bed_wetting: str = None
+    defiant: str = None
+    separation_anxiety: str = None
+    communication_difficulties: str = None
+
+    # Inerventions
+    resource_connection: str = None
+    resource_connection_specify: str = None
+    active_listening: str = None
+    psychoeducation: str = None
+    sleep_hygiene: str = None
+    safe_space_imagine: str = None
+    muscle_relaxation: str = None
+    behavioral_activation: str = None
+    grief_letter: str = None
+    changing_thoughts: str = None
+    senses: str = None
+    distraction_techniques: str = None
+    diary_yourself: str = None
+    chair_technique: str = None
+    build_strengths: str = None
+    motivational_interviewing: str = None
+    diaphragmatic_breathing: str = None
+    safety_plan: str = None
+    interpersonal_communication: str = None
+    prayer: str = None
+    supportive_people: str = None
+    other_strategies: str = None
+    psychiatric_medications: str = None
+
+    # Mental Health
+    in_person: str = None
+    tele: str = None
+    female_only: str = None
+    go_clinic: str = None
+    mental_other: str = None
+    acupuncture: str = None
+    send_audio: str = None
+    psychiatry: str = None
+    refill: str = None
+    taking_regularly: str = None
+    concerns_followup: str = None
+    last_follow_up_date: str = None
+    feeling_nervous: str = None
+    no_control_worrying: str = None
+    little_interest: str = None
+    feeling_down: str = None
+    cant_sleep: str = None
+    dont_feel_safe_living: str = None
+    how_you_feel: str = None
+    child_body_feeling: str = None
+    child_away_from_people: str = None
+    child_feeling_happy: str = None
+    child_trouble_sleeping: str = None
+    child_hard_pay_attention: str = None
+    child_feels_alone: str = None
+    body_feelings: str = None
+    away_from_people: str = None
+    feeling_happy: str = None
+    trouble_sleeping: str = None
+    hard_pay_attention: str = None
+    feel_alone: str = None
+    past_week_stress: str = None
+
+    # Nursing Notes     
+    bodyHabitus: str = None
+    procedures: str = None
+    observations: str = None
+
+    # Lab
+    dateBt1: str = None
+    testBt1: str = None
+    resultBt1: str = None
+    notesBt1: str = None
+    dateBt2: str = None
+    testBt2: str = None
+    resultBt2: str = None
+    notesBt2: str = None
+    dateBt3: str = None
+    testBt3: str = None
+    resultBt3: str = None
+    notesBt3: str = None
+    dateBt4: str = None
+    testBt4: str = None
+    resultBt4: str = None
+    notesBt4: str = None
+    dateBt5: str = None
+    testBt5: str = None
+    resultBt5: str = None
+    notesBt5: str = None
+    dateI1: str = None
+    testI1: str = None
+    resultI1: str = None
+    notesI1: str = None
+    dateI2: str = None
+    testI2: str = None
+    resultI2: str = None
+    notesI2: str = None
+    dateI3: str = None
+    testI3: str = None
+    resultI3: str = None
+    notesI3: str = None
+
+    # Dental Treatment
+    dental_treatment: str = None
 
 
 # COLUMN_TYPES = [str, None, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, float, str,

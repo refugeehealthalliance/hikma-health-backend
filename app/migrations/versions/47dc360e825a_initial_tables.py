@@ -36,6 +36,7 @@ def upgrade():
       surname uuid REFERENCES string_ids(id) ON DELETE CASCADE,
       date_of_birth DATE,
       place_of_birth uuid REFERENCES string_ids(id) ON DELETE CASCADE,
+      number text,
       edited_at timestamp with time zone
     );
     """)

@@ -23,6 +23,7 @@ for given_name, surname, sex in [
         sex=sex,
         country=LanguageString(id=str(uuid.uuid4()), content_by_language={'en': 'Syria'}),
         hometown=LanguageString(id=str(uuid.uuid4()), content_by_language={'en': 'Damascus'}),
-        phone=None
+        phone=None,
+        number="123123"
     )
     add_patient(patient)
