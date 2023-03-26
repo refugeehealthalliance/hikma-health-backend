@@ -296,6 +296,14 @@ def write_common_problems_event(row: PatientDataRow, event):
     row.defiant = data.get('defiant')
     row.separation_anxiety = data.get('separationAnxiety')
     row.communication_difficulties = data.get('communicationDifficulties')
+    row.trauma_physical = data.get('trauma_physical')
+    row.trauma_sexual = data.get('trauma_sexual')
+    row.trauma_abuse = data.get('trauma_abuse')
+    row.trauma_killing = data.get('trauma_killing')
+    row.trauma_p_seperation = data.get('trauma_p_seperation')
+    row.trauma_threats = data.get('trauma_threats')
+    row.trauma_t_j = data.get('trauma_t_j')
+    row.trauma_others = data.get('trauma_others')
 
 def write_lab_event(row: PatientDataRow, event):
     data = json.loads(event.event_metadata)

@@ -90,14 +90,14 @@ COLUMNS = [
     'blood_glucose',
     
     # examination
-    "trauma_physical",
-    "trauma_sexual",
-    "trauma_abuse",
-    "trauma_killing",
-    "trauma_p_seperation",
-    "trauma_threats",
-    "trauma_t_j",
-    "trauma_others",
+    # "trauma_physical",
+    # "trauma_sexual",
+    # "trauma_abuse",
+    # "trauma_killing",
+    # "trauma_p_seperation",
+    # "trauma_threats",
+    # "trauma_t_j",
+    # "trauma_others",
     # Medicines
     "medicationM1",
     "typeM1",
@@ -195,6 +195,15 @@ COLUMNS = [
     "defiant",
     "separation_anxiety",
     "communication_difficulties",
+    "traumaPhysical",
+    "trauma_physical",
+    "trauma_sexual",
+    "trauma_abuse",
+    "trauma_killing",
+    "trauma_p_seperation",
+    "trauma_threats",
+    "trauma_t_j",
+    "trauma_others",
     # Inerventions
     "resource_connection",
     "resource_connection_specify",
@@ -360,14 +369,14 @@ class PatientDataRow:
     weight: str = None
     blood_glucose: str = None
     # Examination
-    trauma_physical: str = None
-    trauma_sexual: str = None
-    trauma_abuse: str = None
-    trauma_killing: str = None
-    trauma_p_seperation: str = None
-    trauma_threats: str = None
-    trauma_t_j: str = None
-    trauma_others: str = None
+    # trauma_physical: str = None
+    # trauma_sexual: str = None
+    # trauma_abuse: str = None
+    # trauma_killing: str = None
+    # trauma_p_seperation: str = None
+    # trauma_threats: str = None
+    # trauma_t_j: str = None
+    # trauma_others: str = None
     # Medicines
     medicationM1: str = None
     typeM1: str = None
@@ -466,6 +475,14 @@ class PatientDataRow:
     defiant: str = None
     separation_anxiety: str = None
     communication_difficulties: str = None
+    trauma_physical: str = None
+    trauma_sexual: str = None
+    trauma_abuse: str = None
+    trauma_killing: str = None
+    trauma_p_seperation: str = None
+    trauma_threats: str = None
+    trauma_t_j: str = None
+    trauma_others: str = None
 
     # Inerventions
     resource_connection: str = None
